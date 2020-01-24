@@ -31,4 +31,5 @@ def graficar_matriz_de_confusion(y_ref, y_pred, clases, cmap=plt.cm.Blues):
                     ha="center", va="center",
                     color="white" if cm[i, j] > thresh else "black")
     fig.tight_layout()
+    plt.savefig('confusion.png')
     plt.show()

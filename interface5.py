@@ -14,23 +14,23 @@ import cv2
 
 root=Tk()
 
-miFrame=Frame(root,width=1200, height=600)
+miFrame=Frame(root,width=1200, height=5200)
 miFrame.pack()
 
-pathLabel=Label(miFrame,text="Path:")
+pathLabel=Label(miFrame,text="Path:",font=("Courier", 20))
 pathLabel.grid(row=0,column=0,sticky="e",padx=10,pady=5)
 
 #var para almacenar el path
 tkpath=StringVar()
 
-cuadroPath=Entry(miFrame, textvariable=tkpath)
+cuadroPath=Entry(miFrame, textvariable=tkpath,width=50,font=("Courier", 10))
 cuadroPath.grid(row=0,column=1)
 
 #var para resultado
 result=StringVar()
 
-resultLabel=Label(miFrame,textvariable=result)
-resultLabel.grid(row=1,column=1,sticky="e",padx=10,pady=5)
+resultLabel=Label(miFrame,textvariable=result,font=("Courier", 20))
+resultLabel.grid(row=1,column=0,padx=10,pady=5,columnspan=2)
 
 # Codigo para el boton
 def codigoBoton():
@@ -72,7 +72,7 @@ def codigoBoton():
 	result.set('Memes encontrados: '+str(memes)+'\nNo Memes: '+str(not_memes)+'\nImagenes procesadas: '+str(memes+not_memes))
 
 # Crear botones
-botonProcess=Button(root, text="Process", command=codigoBoton)
+botonProcess=Button(root, text="Process", command=codigoBoton,font=("Courier", 20))
 botonProcess.config(cursor='hand2')
 botonProcess.pack()
 
